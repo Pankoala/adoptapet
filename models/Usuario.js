@@ -1,25 +1,5 @@
-// Usuario.js
-/** Clase que representa a un usuario de la plataforma*/
-/*class Usuario {
-    constructor(id, username, nombre, apellido, email, password, ubicacion, telefono, bio, fotos, tipo) {
-      this.id = id;
-      this.username = username;
-      this.nombre = nombre;
-      this.apellido = apellido;
-      this.email = email;
-      this.password = password;
-      this.ubicacion = ubicacion;
-      this.telefono = telefono;
-      this.bio = bio;
-      this.fotos = fotos;
-      this.tipo = tipo; // tipo normal o anunciante
-    }
-  }
-  
-  module.exports = Usuario;*/
-
    // Usuario.js
-   const mongoose = require('mongoose');                         //Importando mongoose.
+   const mongoose = require('mongoose');                         
    const uniqueValidator = require("mongoose-unique-validator"); //Importando módulo mongoose-unique-validator, pendiente de instalar.
    const crypto = require('crypto');                             //Importando módulo crypto, pendiente de instalar.
    const jwt = require('jsonwebtoken');                          //Importando módulo jsonwebtoken, pendiente de instalar.
@@ -48,7 +28,7 @@
     telefono: String,
     bio: String,
     foto: String,
-    tipo: { type: String, enum: ["normal", "anunciante"] },
+    tipo: { type: String, enum: ["usuario", "admin"] },
     hash: String, //este campo se utilizará para la sesión
     salt: String, //este campo se utilizará para la sesión
   },
