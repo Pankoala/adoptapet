@@ -1,20 +1,7 @@
-/*  Archivo controllers/solicitudes.js
- *  Simulando la respuesta de objetos Mascota
- *  en un futuro aquí se utilizarán los modelos
- */
-
-/*const Solicitud = require('../models/Solicitud')
-
-function crearSolicitud(req, res) {
-  // Instanciaremos un nuevo usuario utilizando la clase usuario
-  var solicitud = new Solicitud(req.body)
-  res.status(201).send(solicitud)
-}*/
-
 const mongoose = require("mongoose");
 const Usuario = mongoose.model('Usuario')
-const Solicitud = mongoose.model('Solicitud')
-const Mascota = mongoose.model('Mascota')
+const Solicitud = mongoose.model('NewPlaylist')
+const Mascota = mongoose.model('Playlist')
 mongoose.set('useFindAndModify', false);
 
 function crearSolicitud(req, res, next) { // POST v1/solicitudes?mascota_id=021abo59c96b90a02344...
@@ -126,6 +113,5 @@ module.exports = {
   crearSolicitud,
   obtenerSolicitud,
   modificarSolicitud,
-  //eliminarSolicitud,
   obtenerSolicitud
 }
